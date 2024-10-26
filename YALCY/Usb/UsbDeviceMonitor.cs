@@ -91,7 +91,7 @@ public class UsbDeviceMonitor
     private void AddToList(HidDevice dev)
     {
         if ((dev.VendorID != 0x1209 || dev.ProductID != 0x2882 || dev.ReleaseNumberBcd != 0x0900) &&
-            (dev.VendorID == 0x0E6F || dev.ProductID != 0x0103)) return;
+            (dev.VendorID != 0x0E6F || dev.ProductID != 0x0103)) return;
         _connectedDevices.Add(dev);
         DeviceInserted?.Invoke(dev);
     }
